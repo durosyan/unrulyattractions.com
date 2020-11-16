@@ -1,11 +1,16 @@
 import React from "react"
 
-import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from "@material-ui/core/styles"
+import CssBaseline from "@material-ui/core/CssBaseline"
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme"
 
-import Meta from '../utility/meta.js';
-import theme from '../utility/theme.js';
-import Navigation from './Navigation.js';
+import Meta from "./Meta"
+import Navigation from "./Navigation"
+
+const theme = createMuiTheme({
+  palette: { type: "dark" },
+  typography: { fontFamily: "Amatic SC, Permanent Marker, Roboto" },
+})
 
 export default function Layout({ children }) {
   return (
@@ -13,9 +18,7 @@ export default function Layout({ children }) {
       <Meta />
       <CssBaseline />
       <Navigation />
-      <div>
-        {children}
-      </div>
-    </ThemeProvider >
+      <div>{children}</div>
+    </ThemeProvider>
   )
 }

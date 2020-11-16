@@ -1,9 +1,21 @@
 /* https://www.gatsbyjs.com/docs/gatsby-config/ */
 module.exports = {
   siteMetadata: {
-    title: "weka projects",
-    siteUrl: "https://www.wekaprojects.co.nz",
-    description: "online store for weka projects",
+    title: "unruly attractions",
+    siteUrl: "http://unrulyattractions.com/",
+    description: "A game development team",
+    social: {
+      instagram: "https://www.instagram.com/unrulyattractions",
+      facebook: "https://www.facebook.com/UnrulyAttractions",
+      twitter: "twitter.com/vethan4",
+      email: "pr@unrulyattractions.com",
+      medium: "@kigacit636"
+    },
+    jsonld: {
+      "@context": "https://schema.org/",
+      "datePublished": "2020-08-11",
+      "description": "a video game development team"
+    }
   },
   plugins: [
     "gatsby-theme-material-ui",
@@ -12,14 +24,14 @@ module.exports = {
       resolve: "gatsby-plugin-layout",
       options: {
         component: require.resolve("./src/components/Layout.js"),
-      }
+      },
     },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Weka Projects",
-        short_name: "Weka",
-        icon: "src/assets/logo-feathers.svg",
+        name: "unruly attractions",
+        short_name: "unruly",
+        icon: "src/assets/UA_logo_tall_dark.svg",
         start_url: "/",
         background_color: "#262626",
         theme_color: "#e5e5e5",
@@ -30,9 +42,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/
-        }
-      }
+          include: /assets/,
+        },
+      },
     },
     {
       resolve: "gatsby-theme-material-ui",
@@ -47,11 +59,11 @@ module.exports = {
               {
                 family: "Permanent Marker",
                 variants: ["400"],
-              }
+              },
             ],
           },
         },
       },
     },
   ],
-};
+}
