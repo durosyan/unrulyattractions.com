@@ -27,7 +27,12 @@ export default () => {
       <meta property="og:image:width" content="512" />
       <meta property="og:image:height" content="512" />
       <meta property="og:image:alt" content="unruly attractions logo" />
-      <meta property="og:image" content={data.site.siteMetadata.siteUrl + 'icons/UA_logo_dark.png'} />
+      <meta property="og:image" content={data.site.siteMetadata.siteUrl + 'icons/UA_logo.png'} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@vethan4" />
+      <meta name="twitter:title" content="Unruly Attractions gaming company" />
+      <meta name="twitter:description" content="Unruly Attractions" />
+      <meta name="twitter:image" content={data.site.siteMetadata.siteUrl + 'icons/UA_logo.png'} />
     </Helmet>
   )
 }

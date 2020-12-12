@@ -1,40 +1,52 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Grid from '@material-ui/core/Grid';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    position: "fixed",
+    backgroundColor: "#212121",
+    opacity: "0.5"
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
+  link: { fontFamily: "BigNoodle" },
 }));
 
-export default function ButtonAppBar() {
+// TODO: styles for active section
+export default function Navigation({ activePage, onNavigation }) {
   const classes = useStyles();
+  const variant = "h5";
+
+  const navigate = (e) => onNavigation ? onNavigation(e) : console.error('onNavigation has no callback');
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <Grid container className={classes.root}>
+      <Grid item>
+        <Button onClick={() => navigate(0)}>
+          <Typography variant={variant} className={classes.link}>Home</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button onClick={() => navigate(1)}>
+          <Typography variant={variant} className={classes.link}>Contract</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button onClick={() => navigate(2)}>
+          <Typography variant={variant} className={classes.link}>Game</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button onClick={() => navigate(3)}>
+          <Typography variant={variant} className={classes.link}>Blog</Typography>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button onClick={() => navigate(4)}>
+          <Typography variant={variant} className={classes.link}>Team</Typography>
+        </Button>
+      </Grid>
+    </Grid>
   );
 }

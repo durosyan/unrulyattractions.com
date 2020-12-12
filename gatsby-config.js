@@ -13,19 +13,13 @@ module.exports = {
     },
     jsonld: {
       "@context": "https://schema.org/",
-      "datePublished": "2020-08-11",
-      "description": "a video game development team"
+      datePublished: "2020-08-11",
+      description: "a video game development team"
     }
   },
   plugins: [
     "gatsby-theme-material-ui",
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-layout",
-      options: {
-        component: require.resolve("./src/components/Layout.js"),
-      },
-    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -47,23 +41,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-theme-material-ui",
-      options: {
-        webFontsConfig: {
-          fonts: {
-            google: [
-              {
-                family: "Amatic SC",
-                variants: ["400", "700"],
-              },
-              {
-                family: "Permanent Marker",
-                variants: ["400"],
-              },
-            ],
-          },
-        },
-      },
-    },
+      resolve: "gatsby-theme-material-ui"
+    }
   ],
 }
