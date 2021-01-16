@@ -36,12 +36,14 @@ const useStyles = makeStyles(theme => {
       backgroundColor: '#f5f4f2',
       ...page
     },
-    redPage: {
+    blackPage: {
       backgroundColor: '#212121',
+      borderTop: 'solid #212121 2px',
       ...page
     },
     slice: {
       height: theme.spacing(10),
+      position: "relative",
       clipPath: `polygon(0 0, 0 0, 100% 100%, 0 100%);`,
       background: "#212121"
     },
@@ -91,14 +93,14 @@ export default function FrontPage() {
       <Grid ref={scrollRefs[0]} container className={classes.whitePage}>
         <Grid container className={classes.grid}>
           <Grid item xs={12} >
-            <UALogo />
+            <UALogo className={classes.icon} />
           </Grid>
         </Grid>
       </Grid>
 
-      <Grid item className={classes.slice}></Grid>
+      <Grid container className={classes.slice}></Grid>
 
-      <Grid ref={scrollRefs[1]} container className={classes.redPage}>
+      <Grid ref={scrollRefs[1]} container className={classes.blackPage}>
         <Grid container className={classes.grid}>
           <Grid item xs={12}>
             about us
@@ -118,7 +120,7 @@ export default function FrontPage() {
 
       <Grid item className={classes.slice}></Grid>
 
-      <Grid ref={scrollRefs[3]} container className={classes.redPage}>
+      <Grid ref={scrollRefs[3]} container className={classes.blackPage}>
         <Grid container className={classes.grid}>
           <Grid item xs={12}>
             <Blog />

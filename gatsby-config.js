@@ -9,7 +9,7 @@ module.exports = {
       facebook: "https://www.facebook.com/UnrulyAttractions",
       twitter: "twitter.com/vethan4",
       email: "pr@unrulyattractions.com",
-      medium: "@kigacit636"
+      medium: "@barackobama"
     },
     jsonld: {
       "@context": "https://schema.org/",

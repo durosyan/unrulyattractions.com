@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
     backgroundColor: "#212121",
-    opacity: "0.5"
+    opacity: "0.5",
+    zIndex: theme.zIndex.appBar
   },
   link: { fontFamily: "BigNoodle" },
 }));
